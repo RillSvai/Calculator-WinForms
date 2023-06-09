@@ -59,7 +59,7 @@
             btnPlus = new Button();
             btnPlusMinus = new Button();
             btnZero = new Button();
-            btnComma = new Button();
+            btnDot = new Button();
             btnEqual = new Button();
             pnlMemory = new Panel();
             btnMemory6 = new Button();
@@ -209,7 +209,7 @@
             fpnlControls.Controls.Add(btnPlus);
             fpnlControls.Controls.Add(btnPlusMinus);
             fpnlControls.Controls.Add(btnZero);
-            fpnlControls.Controls.Add(btnComma);
+            fpnlControls.Controls.Add(btnDot);
             fpnlControls.Controls.Add(btnEqual);
             fpnlControls.Dock = DockStyle.Fill;
             fpnlControls.Location = new Point(0, 145);
@@ -320,6 +320,7 @@
             btnDelete.Size = new Size(91, 55);
             btnDelete.TabIndex = 10;
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnDivide
             // 
@@ -335,6 +336,7 @@
             btnDivide.TabIndex = 11;
             btnDivide.Text = "÷";
             btnDivide.UseVisualStyleBackColor = false;
+            btnDivide.Click += BtnBinaryOperation_Click;
             // 
             // btnSeven
             // 
@@ -350,6 +352,7 @@
             btnSeven.TabIndex = 12;
             btnSeven.Text = "7";
             btnSeven.UseVisualStyleBackColor = false;
+            btnSeven.Click += BtnNum_Click;
             // 
             // btnEight
             // 
@@ -365,6 +368,7 @@
             btnEight.TabIndex = 13;
             btnEight.Text = "8";
             btnEight.UseVisualStyleBackColor = false;
+            btnEight.Click += BtnNum_Click;
             // 
             // btnNine
             // 
@@ -380,6 +384,7 @@
             btnNine.TabIndex = 14;
             btnNine.Text = "9";
             btnNine.UseVisualStyleBackColor = false;
+            btnNine.Click += BtnNum_Click;
             // 
             // btnMultiply
             // 
@@ -395,6 +400,7 @@
             btnMultiply.TabIndex = 15;
             btnMultiply.Text = "x";
             btnMultiply.UseVisualStyleBackColor = false;
+            btnMultiply.Click += BtnBinaryOperation_Click;
             // 
             // btnFour
             // 
@@ -410,6 +416,7 @@
             btnFour.TabIndex = 16;
             btnFour.Text = "4";
             btnFour.UseVisualStyleBackColor = false;
+            btnFour.Click += BtnNum_Click;
             // 
             // btnFive
             // 
@@ -425,6 +432,7 @@
             btnFive.TabIndex = 17;
             btnFive.Text = "5";
             btnFive.UseVisualStyleBackColor = false;
+            btnFive.Click += BtnNum_Click;
             // 
             // btnSix
             // 
@@ -440,6 +448,7 @@
             btnSix.TabIndex = 18;
             btnSix.Text = "6";
             btnSix.UseVisualStyleBackColor = false;
+            btnSix.Click += BtnNum_Click;
             // 
             // btnMinus
             // 
@@ -455,6 +464,7 @@
             btnMinus.TabIndex = 19;
             btnMinus.Text = "-";
             btnMinus.UseVisualStyleBackColor = false;
+            btnMinus.Click += BtnBinaryOperation_Click;
             // 
             // btnOne
             // 
@@ -470,6 +480,7 @@
             btnOne.TabIndex = 20;
             btnOne.Text = "1";
             btnOne.UseVisualStyleBackColor = false;
+            btnOne.Click += BtnNum_Click;
             // 
             // btnTwo
             // 
@@ -485,6 +496,7 @@
             btnTwo.TabIndex = 21;
             btnTwo.Text = "2";
             btnTwo.UseVisualStyleBackColor = false;
+            btnTwo.Click += BtnNum_Click;
             // 
             // btnThree
             // 
@@ -500,6 +512,7 @@
             btnThree.TabIndex = 22;
             btnThree.Text = "3";
             btnThree.UseVisualStyleBackColor = false;
+            btnThree.Click += BtnNum_Click;
             // 
             // btnPlus
             // 
@@ -515,6 +528,7 @@
             btnPlus.TabIndex = 23;
             btnPlus.Text = "+";
             btnPlus.UseVisualStyleBackColor = false;
+            btnPlus.Click += BtnBinaryOperation_Click;
             // 
             // btnPlusMinus
             // 
@@ -545,21 +559,23 @@
             btnZero.TabIndex = 27;
             btnZero.Text = "0";
             btnZero.UseVisualStyleBackColor = false;
+            btnZero.Click += BtnNum_Click;
             // 
-            // btnComma
+            // btnDot
             // 
-            btnComma.BackColor = Color.FromArgb(33, 0, 55);
-            btnComma.Dock = DockStyle.Bottom;
-            btnComma.FlatAppearance.BorderSize = 0;
-            btnComma.FlatStyle = FlatStyle.Flat;
-            btnComma.Font = new Font("Cascadia Code SemiLight", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnComma.ForeColor = Color.White;
-            btnComma.Location = new Point(197, 308);
-            btnComma.Name = "btnComma";
-            btnComma.Size = new Size(91, 55);
-            btnComma.TabIndex = 28;
-            btnComma.Text = ",";
-            btnComma.UseVisualStyleBackColor = false;
+            btnDot.BackColor = Color.FromArgb(33, 0, 55);
+            btnDot.Dock = DockStyle.Bottom;
+            btnDot.FlatAppearance.BorderSize = 0;
+            btnDot.FlatStyle = FlatStyle.Flat;
+            btnDot.Font = new Font("Cascadia Code SemiLight", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDot.ForeColor = Color.White;
+            btnDot.Location = new Point(197, 308);
+            btnDot.Name = "btnDot";
+            btnDot.Size = new Size(91, 55);
+            btnDot.TabIndex = 28;
+            btnDot.Text = ".";
+            btnDot.UseVisualStyleBackColor = false;
+            btnDot.Click += BtnNum_Click;
             // 
             // btnEqual
             // 
@@ -575,6 +591,7 @@
             btnEqual.TabIndex = 29;
             btnEqual.Text = "=";
             btnEqual.UseVisualStyleBackColor = false;
+            btnEqual.Click += btnEqual_Click;
             // 
             // pnlMemory
             // 
@@ -677,7 +694,7 @@
             Display.BackColor = Color.FromArgb(33, 0, 70);
             Display.BorderStyle = BorderStyle.None;
             Display.Dock = DockStyle.Top;
-            Display.Font = new Font("Cascadia Mono SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Display.Font = new Font("Cascadia Mono SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             Display.ForeColor = Color.White;
             Display.Location = new Point(0, 30);
             Display.Margin = new Padding(0);
@@ -686,7 +703,7 @@
             Display.ReadOnly = true;
             Display.Size = new Size(390, 80);
             Display.TabIndex = 1;
-            Display.Text = "322323";
+            Display.Text = "0";
             Display.TextAlign = HorizontalAlignment.Right;
             // 
             // subDisplay
@@ -703,7 +720,6 @@
             subDisplay.ReadOnly = true;
             subDisplay.Size = new Size(390, 30);
             subDisplay.TabIndex = 0;
-            subDisplay.Text = "322323";
             subDisplay.TextAlign = HorizontalAlignment.Right;
             // 
             // StandartCalculatorForm
@@ -716,6 +732,7 @@
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
             Name = "StandartCalculatorForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Standart сalculator";
             FormClosed += StandartCalculatorForm_FormClosed;
             Load += StandartCalculatorForm_Load;
@@ -771,7 +788,7 @@
         private Button btnPlus;
         private Button btnPlusMinus;
         private Button btnZero;
-        private Button btnComma;
+        private Button btnDot;
         private Button btnEqual;
     }
 }
