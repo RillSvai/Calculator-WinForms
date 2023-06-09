@@ -28,10 +28,19 @@ namespace Calculator
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
 
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+        }
 
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState |= FormWindowState.Minimized;
         }
     }
 }
