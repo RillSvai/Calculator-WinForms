@@ -75,10 +75,9 @@ namespace Calculator
                 _calculator.SecondValue = Display.Text;
                 StandartCalculatorController.ApplyOperation(_calculator);
                 Display.Text = _calculator.Result.ToString();
-                _calculator.Result = Convert.ToDecimal(Display.Text);
             }
+            _calculator.FirstValue = Display.Text;
             _calculator.Operation = btn.Text;
-            _calculator.FirstValue = !string.IsNullOrEmpty(subDisplay.Text) ? _calculator.Result.ToString() : Display.Text;
             subDisplay.Text += string.IsNullOrEmpty(subDisplay.Text) ? $"{_calculator.FirstValue} {_calculator.Operation} " : $"{_calculator.SecondValue} {_calculator.Operation} ";
             _enterValue = true;
         }
@@ -92,12 +91,46 @@ namespace Calculator
                 StandartCalculatorController.ApplyOperation(_calculator);
                 Display.Text = _calculator.Result.ToString();
             }
+            _enterValue = true;
+            _calculator.SecondValue = "0";
+            _calculator.FirstValue = "0";
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Display.Text = Display.Text.Remove(Display.Text.Length - 1);
             if (Display.Text.Length == 0) Display.Text = "0";
+        }
+
+        private void BtnUnaryOperation_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (!string.IsNullOrEmpty(_calculator.Operation))
+            {
+                string oldOp = btn.Text;
+                _calculator.SecondValue = Display.Text;
+                _calculator.Operation = btn.Text;
+                StandartCalculatorController.ApplyUnaryOperation(_calculator);
+                _calculator.Operation = oldOp;
+                StandartCalculatorController.ApplyOperation(_calculator);
+                Display.Text = _calculator.Result.ToString();
+                _calculator.FirstValue = Display.Text;
+            }
+            else
+            {
+                _calculator.FirstValue = Display.Text;
+                _calculator.Operation = btn.Text;
+                subDisplay.Text += $"{_calculator.FirstValue} ";
+            }
+
+        }
+
+        private void btnFullClear_Click(object sender, EventArgs e)
+        {
+            subDisplay.Clear();
+            _calculator.Clear();
+            Display.Clear();
+            _enterValue = true;
         }
     }
 }

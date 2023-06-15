@@ -13,5 +13,6 @@ namespace Calculator
         string FirstValue { get; set; }
         string SecondValue { get; set; }
         string Operation { get; set; }
+        void Clear();
     }
 }

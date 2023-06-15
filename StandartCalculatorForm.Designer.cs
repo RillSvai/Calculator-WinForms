@@ -230,6 +230,7 @@
             btnPercent.TabIndex = 4;
             btnPercent.Text = "%";
             btnPercent.UseVisualStyleBackColor = false;
+            btnPercent.Click += BtnUnaryOperation_Click;
             // 
             // btnSquareRoot
             // 
@@ -239,12 +240,13 @@
             btnSquareRoot.FlatStyle = FlatStyle.Flat;
             btnSquareRoot.Font = new Font("Cascadia Code SemiLight", 18F, FontStyle.Regular, GraphicsUnit.Point);
             btnSquareRoot.ForeColor = Color.White;
-            btnSquareRoot.Image = Properties.Resources.square_root_16;
             btnSquareRoot.Location = new Point(100, 3);
             btnSquareRoot.Name = "btnSquareRoot";
             btnSquareRoot.Size = new Size(91, 55);
             btnSquareRoot.TabIndex = 5;
+            btnSquareRoot.Text = "√";
             btnSquareRoot.UseVisualStyleBackColor = false;
+            btnSquareRoot.Click += BtnUnaryOperation_Click;
             // 
             // btnRaiseSquare
             // 
@@ -260,6 +262,7 @@
             btnRaiseSquare.TabIndex = 6;
             btnRaiseSquare.Text = "x^2";
             btnRaiseSquare.UseVisualStyleBackColor = false;
+            btnRaiseSquare.Click += BtnUnaryOperation_Click;
             // 
             // btnInverse
             // 
@@ -275,6 +278,7 @@
             btnInverse.TabIndex = 7;
             btnInverse.Text = "1/x";
             btnInverse.UseVisualStyleBackColor = false;
+            btnInverse.Click += BtnUnaryOperation_Click;
             // 
             // btnClear
             // 
@@ -305,6 +309,7 @@
             btnFullClear.TabIndex = 9;
             btnFullClear.Text = "C";
             btnFullClear.UseVisualStyleBackColor = false;
+            btnFullClear.Click += btnFullClear_Click;
             // 
             // btnDelete
             // 
@@ -538,12 +543,13 @@
             btnPlusMinus.FlatStyle = FlatStyle.Flat;
             btnPlusMinus.Font = new Font("Cascadia Code SemiLight", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnPlusMinus.ForeColor = Color.White;
-            btnPlusMinus.Image = Properties.Resources.positive_and_negative_16;
             btnPlusMinus.Location = new Point(3, 308);
             btnPlusMinus.Name = "btnPlusMinus";
             btnPlusMinus.Size = new Size(91, 55);
             btnPlusMinus.TabIndex = 26;
+            btnPlusMinus.Text = "±";
             btnPlusMinus.UseVisualStyleBackColor = false;
+            btnPlusMinus.Click += BtnUnaryOperation_Click;
             // 
             // btnZero
             // 

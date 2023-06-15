@@ -13,7 +13,7 @@ namespace Calculator
         private decimal _result = 0;
         private string _firstValue;
         private string _operation;
-        private string _lastValue;
+        private string _secondValue;
         public string History
         {
             get => _history;
@@ -34,6 +34,13 @@ namespace Calculator
             get => _operation;
             set => _operation = value;
         }
-        public string SecondValue { get => _lastValue; set => _lastValue = value; }
+        public string SecondValue { get => _secondValue; set => _secondValue = value; }
+        public void Clear() 
+        {
+            _operation = string.Empty;
+            _secondValue = string.Empty;
+            _firstValue = string.Empty;
+            _result = 0;
+        }
     }
 }
