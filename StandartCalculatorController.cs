@@ -19,7 +19,6 @@ namespace Calculator
             "-" => Convert.ToDecimal(calculator.FirstValue) - Convert.ToDecimal(calculator.SecondValue),
             "x" => Convert.ToDecimal(calculator.SecondValue) * Convert.ToDecimal(calculator.FirstValue),
             "÷" => Convert.ToDecimal(calculator.FirstValue) / Convert.ToDecimal(calculator.SecondValue),
-            "sqrt" => Convert.ToDecimal(Math.Sqrt(Convert.ToDouble(calculator.FirstValue))),
             
         };
         static public void ApplyUnaryOperation(ICalculator calculator)
@@ -27,8 +26,6 @@ namespace Calculator
             calculator.SecondValue = calculator.Operation switch
             {
                 "√" => Math.Sqrt(Convert.ToDouble(calculator.SecondValue)).ToString(),
-                "inverse" => (1.0 / Convert.ToDouble(calculator.SecondValue)).ToString(),
-                "pow" => Math.Pow(Convert.ToDouble(calculator.SecondValue), 2).ToString()
             };
             if (calculator.FirstValue == "0") (calculator.SecondValue,calculator.FirstValue) = (calculator.FirstValue,calculator.SecondValue);
         }
